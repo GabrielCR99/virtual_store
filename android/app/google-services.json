@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "469851620792",
+    "firebase_url": "https://lojaflutter-8ff9e.firebaseio.com",
+    "project_id": "lojaflutter-8ff9e",
+    "storage_bucket": "lojaflutter-8ff9e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:469851620792:android:4b8face741d9cdd3e53b4d",
+        "android_client_info": {
+          "package_name": "br.com.roveri.virtual_store"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "469851620792-q7k72td1h9i710pv966dv7l5h348snbo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAMm0GyNj0yjfD0dAB-EUz59N0I4GG7G0Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "469851620792-q7k72td1h9i710pv966dv7l5h348snbo.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
