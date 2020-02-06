@@ -65,7 +65,7 @@ class CategoryScreen extends StatelessWidget {
                   ListView.builder(
                     itemBuilder: (BuildContext context, int index) {
                       return ProductTile(
-                        'grid',
+                        'list',
                         ProductData.fromDocument(
                             snapshot.data.documents[index]),
                       );
