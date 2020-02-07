@@ -110,7 +110,9 @@ class _SignUpScrenState extends State<SignUpScren> {
                           userData: userData,
                           password: _passwordController.text,
                           onSuccess: _onSuccess,
-                          onFail: _onFail,
+                          onFail: (errorMessage) {
+                            _onFail(errorMessage);
+                          },
                         );
                       }
                     },
@@ -125,29 +127,27 @@ class _SignUpScrenState extends State<SignUpScren> {
   }
 
   void _onSuccess() {
-    _scaffoldKey.currentState.showSnackBar(
-      SnackBar(
-        content: Text(
-          'Usuário criado com sucesso!',
-        ),
-        backgroundColor: Theme.of(context).primaryColor,
-        duration: Duration(seconds: 2),
-      )
-    );
-    Future.delayed(Duration(seconds: 2)).then((_){
+    _scaffoldKey.currentState.showSnackBar(SnackBar(
+      content: Text(
+        'Usuário criado com sucesso!',
+      ),
+      backgroundColor: Theme.of(context).primaryColor,
+      duration: Duration(seconds: 2),
+    ));
+    Future.delayed(Duration(seconds: 2)).then((_) {
       Navigator.of(context).pop();
     });
   }
 
-  void _onFail() {
+  void _onFail(String errorMessage) {
     _scaffoldKey.currentState.showSnackBar(
-        SnackBar(
-          content: Text(
-            'Falha ao criar usuário!',
-          ),
-          backgroundColor: Colors.redAccent,
-          duration: Duration(seconds: 3),
+      SnackBar(
+        content: Text(
+          '$errorMessage',
         ),
+        backgroundColor: Colors.redAccent,
+        duration: Duration(seconds: 3),
+      ),
     );
   }
 }
