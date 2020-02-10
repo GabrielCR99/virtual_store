@@ -7,6 +7,8 @@ import 'package:virtual_store/models/user_model.dart';
 class CartModel extends Model {
   UserModel user;
 
+  bool isLoading = false;
+
   List<CartProduct> products = [];
 
   CartModel(this.user);

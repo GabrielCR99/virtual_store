@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:scoped_model/scoped_model.dart';
-import 'package:virtual_store/models/cart_model.dart';
 
 class UserModel extends Model {
   FirebaseAuth _auth = FirebaseAuth.instance;

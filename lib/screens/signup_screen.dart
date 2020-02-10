@@ -41,6 +41,7 @@ class _SignUpScrenState extends State<SignUpScren> {
                   controller: _nameController,
                   validator: (text) {
                     if (text.isEmpty) return 'Nome inválido!';
+                    return null;
                   },
                   decoration: InputDecoration(
                     hintText: 'Nome completo',
@@ -55,6 +56,7 @@ class _SignUpScrenState extends State<SignUpScren> {
                   validator: (text) {
                     if (text.isEmpty || !text.contains('@'))
                       return 'E-mail inválido';
+                    return null;
                   },
                   decoration: InputDecoration(
                     hintText: 'E-mail',
@@ -73,6 +75,7 @@ class _SignUpScrenState extends State<SignUpScren> {
                   validator: (text) {
                     if (text.isEmpty || text.length < 6)
                       return 'Senha inválida!';
+                    return null;
                   },
                 ),
                 TextFormField(
@@ -82,6 +85,7 @@ class _SignUpScrenState extends State<SignUpScren> {
                   ),
                   validator: (text) {
                     if (text.isEmpty) return 'Endereço inválido';
+                    return null;
                   },
                 ),
                 SizedBox(
@@ -112,6 +116,7 @@ class _SignUpScrenState extends State<SignUpScren> {
                           onSuccess: _onSuccess,
                           onFail: (errorMessage) {
                             _onFail(errorMessage);
+                            return null;
                           },
                         );
                       }

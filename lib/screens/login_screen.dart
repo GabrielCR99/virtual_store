@@ -59,6 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     validator: (text) {
                       if (text.isEmpty || !text.contains('@'))
                         return 'E-mail inválido';
+                      return null;
                     },
                     decoration: InputDecoration(
                       hintText: 'E-mail',
@@ -77,13 +78,14 @@ class _LoginScreenState extends State<LoginScreen> {
                     validator: (text) {
                       if (text.isEmpty || text.length < 6)
                         return 'Senha inválida!';
+                      return null;
                     },
                   ),
                   Align(
                     alignment: Alignment.centerRight,
                     child: FlatButton(
                       onPressed: () {
-                        if(_emailController.text.isEmpty){
+                        if (_emailController.text.isEmpty) {
                           _scaffoldKey.currentState.showSnackBar(
                             SnackBar(
                               content: Text(
@@ -93,8 +95,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               duration: Duration(seconds: 3),
                             ),
                           );
-                        }
-                        else{
+                        } else {
                           model.passwordRecovery(_emailController.text);
                           _scaffoldKey.currentState.showSnackBar(
                             SnackBar(
