@@ -3,7 +3,11 @@ import 'package:scoped_model/scoped_model.dart';
 import 'package:virtual_store/models/cart_model.dart';
 import 'package:virtual_store/models/user_model.dart';
 import 'package:virtual_store/screens/login_screen.dart';
+import 'package:virtual_store/screens/order_screen.dart';
 import 'package:virtual_store/tiles/cart_tile.dart';
+import 'package:virtual_store/widgets/cart_price.dart';
+import 'package:virtual_store/widgets/discount_card.dart';
+import 'package:virtual_store/widgets/shipment_card.dart';
 
 class CartScreen extends StatelessWidget {
   @override
@@ -30,7 +34,7 @@ class CartScreen extends StatelessWidget {
         ],
       ),
       body: ScopedModelDescendant<CartModel>(
-        builder: (BuildContext context, Widget child, CartModel model) {
+        builder: (context, child, model) {
           if (model.isLoading && UserModel.of(context).isLoggedIn()) {
             return Center(
               child: CircularProgressIndicator(),
@@ -97,6 +101,16 @@ class CartScreen extends StatelessWidget {
                     return CartTile(product);
                   }).toList(),
                 ),
+                DiscountCard(),
+                ShipmentCard(),
+                CartPrice(() async {
+                  String orderId = await model.finishOrder();
+
+                  if (orderId != null) {
+                    Navigator.of(context).pushReplacement(MaterialPageRoute(
+                        builder: (context) => OrderScreen(orderId)));
+                  }
+                }),
               ],
             );
           }
