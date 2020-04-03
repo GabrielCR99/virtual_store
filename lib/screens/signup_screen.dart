@@ -4,10 +4,10 @@ import 'package:virtual_store/models/user_model.dart';
 
 class SignUpScren extends StatefulWidget {
   @override
-  _SignUpScrenState createState() => _SignUpScrenState();
+  _SignUpScreenState createState() => _SignUpScreenState();
 }
 
-class _SignUpScrenState extends State<SignUpScren> {
+class _SignUpScreenState extends State<SignUpScren> {
   final _formKey = GlobalKey<FormState>();
   final _scaffoldKey = GlobalKey<ScaffoldState>();
 
@@ -21,7 +21,7 @@ class _SignUpScrenState extends State<SignUpScren> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        title: Text(
+        title: const Text(
           'Criar conta',
         ),
         centerTitle: true,
@@ -44,13 +44,11 @@ class _SignUpScrenState extends State<SignUpScren> {
                     return null;
                   },
                   decoration: InputDecoration(
-                    hintText: 'Nome completo',
+                    labelText: 'Nome completo'
                   ),
                   textCapitalization: TextCapitalization.sentences,
                 ),
-                SizedBox(
-                  height: 16.0,
-                ),
+                const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _emailController,
                   validator: (text) {
@@ -63,9 +61,7 @@ class _SignUpScrenState extends State<SignUpScren> {
                   ),
                   keyboardType: TextInputType.emailAddress,
                 ),
-                SizedBox(
-                  height: 16.0,
-                ),
+                const SizedBox(height: 16.0),
                 TextFormField(
                   controller: _passwordController,
                   decoration: InputDecoration(
@@ -88,17 +84,13 @@ class _SignUpScrenState extends State<SignUpScren> {
                     return null;
                   },
                 ),
-                SizedBox(
-                  height: 16.0,
-                ),
+                const SizedBox(height: 16.0),
                 SizedBox(
                   height: 44.0,
                   child: RaisedButton(
                     child: Text(
                       'Criar conta',
-                      style: TextStyle(
-                        fontSize: 18.0,
-                      ),
+                      style: TextStyle(fontSize: 18.0),
                     ),
                     textColor: Colors.white,
                     color: Theme.of(context).primaryColor,
@@ -107,7 +99,7 @@ class _SignUpScrenState extends State<SignUpScren> {
                         Map<String, dynamic> userData = {
                           'name': _nameController.text,
                           'email': _emailController.text,
-                          'address': _addressController.text,
+                          'address': _addressController.text
                         };
 
                         model.signUp(

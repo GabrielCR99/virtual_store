@@ -7,13 +7,15 @@ import 'package:scoped_model/scoped_model.dart';
 class UserModel extends Model {
   FirebaseAuth _auth = FirebaseAuth.instance;
   String authError = '';
+  String errorMessageSignIn = '';
 
   FirebaseUser firebaseUser;
   Map<String, dynamic> userData = Map();
 
   bool isLoading = false;
 
-  static UserModel of(BuildContext context) => ScopedModel.of<UserModel>(context);
+  static UserModel of(BuildContext context) =>
+      ScopedModel.of<UserModel>(context);
 
   void signUp(
       {@required Map<String, dynamic> userData,
@@ -63,7 +65,7 @@ class UserModel extends Model {
       {@required String email,
       @required String password,
       @required VoidCallback onSuccess,
-      @required VoidCallback onFail}) async {
+      @required Function(String) onFail(String errorMessage)}) async {
     isLoading = true;
     notifyListeners();
     _auth
@@ -75,7 +77,24 @@ class UserModel extends Model {
       isLoading = false;
       notifyListeners();
     }).catchError((e) {
-      onFail();
+      switch (e.code) {
+        case 'ERROR_INVALID_EMAIL':
+          errorMessageSignIn = 'E-mail inválido.';
+          break;
+        case 'ERROR_USER_NOT_FOUND':
+          errorMessageSignIn =
+              'O usuário não foi encontrado no nosso banco de dados.'
+              ' Ele pode ter sido removido.';
+          break;
+        case 'ERROR_WRONG_PASSWORD':
+          errorMessageSignIn = 'A senha está errada.';
+          break;
+        case 'ERROR_TOO_MANY_REQUESTS':
+          errorMessageSignIn = 'Houveram muitas requisições de login. Por'
+              ' motivos de segurança, bloqueamos o acesso temporariamente. '
+              'Tente novamente mais tarde.';
+      }
+      onFail(errorMessageSignIn);
       isLoading = false;
       notifyListeners();
     });

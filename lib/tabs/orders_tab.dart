@@ -54,13 +54,11 @@ class OrdersTab extends StatelessWidget {
               ),
               textAlign: TextAlign.center,
             ),
-            SizedBox(
-              height: 16.0,
-            ),
+            const SizedBox(height: 16.0),
             RaisedButton(
               color: Theme.of(context).primaryColor,
               textColor: Colors.white,
-              child: Text(
+              child: const Text(
                 'Entrar',
                 style: TextStyle(
                   fontSize: 18.0,
@@ -75,6 +73,5 @@ class OrdersTab extends StatelessWidget {
         ),
       );
     }
-    return Container();
   }
 }

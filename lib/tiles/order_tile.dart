@@ -26,16 +26,14 @@ class OrderTile extends StatelessWidget {
                     'Código do pedido: ${snapshot.data.documentID}',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
-                    height: 4.0,
-                  ),
+                  const SizedBox(height: 4.0),
                   Text(_buildProuctsText(snapshot.data)),
-                  SizedBox(height: 6.0),
-                  Text(
+                  const SizedBox(height: 6.0),
+                  const Text(
                     'Status do pedido',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 10.0),
+                  const SizedBox(height: 10.0),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[

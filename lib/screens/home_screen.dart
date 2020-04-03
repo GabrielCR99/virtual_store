@@ -43,7 +43,7 @@ class HomeScreen extends StatelessWidget {
         ),
         Scaffold(
           appBar: AppBar(
-            title: Text('Meus pedidos'),
+            title: const Text('Meus pedidos'),
             centerTitle: true,
           ),
           body: OrdersTab(),

@@ -70,9 +70,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     color: primaryColor,
                   ),
                 ),
-                SizedBox(
-                  height: 16.0,
-                ),
+                const SizedBox(height: 16.0),
                 Text(
                   'Tamanho',
                   style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.w500),
@@ -116,9 +114,7 @@ class _ProductScreenState extends State<ProductScreen> {
                     }).toList(),
                   ),
                 ),
-                SizedBox(
-                  height: 16.0,
-                ),
+                const SizedBox(height: 16.0),
                 SizedBox(
                   height: 44.0,
                   child: RaisedButton(

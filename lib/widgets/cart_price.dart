@@ -32,7 +32,7 @@ class CartPrice extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                SizedBox(height: 12.0),
+                const SizedBox(height: 12.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -64,7 +64,7 @@ class CartPrice extends StatelessWidget {
                   ],
                 ),
                 Divider(),
-                SizedBox(height: 12.0),
+                const SizedBox(height: 12.0),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -80,7 +80,7 @@ class CartPrice extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 12.0),
+                const SizedBox(height: 12.0),
                 RaisedButton(
                   child: Text(
                     'Finalizar pedido',

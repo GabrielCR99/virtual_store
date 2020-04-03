@@ -66,9 +66,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     ),
                     keyboardType: TextInputType.emailAddress,
                   ),
-                  SizedBox(
-                    height: 16.0,
-                  ),
+                  const SizedBox(height: 16.0),
                   TextFormField(
                     controller: _passwordController,
                     decoration: InputDecoration(
@@ -115,9 +113,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       padding: EdgeInsets.zero,
                     ),
                   ),
-                  SizedBox(
-                    height: 16.0,
-                  ),
+                  const SizedBox(height: 16.0),
                   RaisedButton(
                     child: Text(
                       'Entrar',
@@ -133,7 +129,10 @@ class _LoginScreenState extends State<LoginScreen> {
                         email: _emailController.text,
                         password: _passwordController.text,
                         onSuccess: _onSuccess,
-                        onFail: _onFail,
+                        onFail: (errorMessage) {
+                          _onFail(errorMessage);
+                          return null;
+                        },
                       );
                     },
                   )
@@ -149,11 +148,11 @@ class _LoginScreenState extends State<LoginScreen> {
     Navigator.of(context).pop();
   }
 
-  void _onFail() {
+  void _onFail(String errorMessage) {
     _scaffoldKey.currentState.showSnackBar(
       SnackBar(
         content: Text(
-          'Falha ao entrar!',
+          'Falha ao entrar! $errorMessage',
         ),
         backgroundColor: Colors.redAccent,
         duration: Duration(seconds: 3),

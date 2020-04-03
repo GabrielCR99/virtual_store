@@ -28,9 +28,7 @@ class DrawerTile extends StatelessWidget {
                     ? Theme.of(context).primaryColor
                     : Colors.grey[700],
               ),
-              SizedBox(
-                width: 32.0,
-              ),
+              const SizedBox(width: 32.0),
               Text(
                 text,
                 style: TextStyle(

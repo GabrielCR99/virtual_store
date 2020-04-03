@@ -42,7 +42,7 @@ class PlaceTile extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.end,
             children: <Widget>[
               FlatButton(
-                child: Text('Ver no mapa'),
+                child: const Text('Ver no mapa'),
                 textColor: Colors.blue,
                 padding: EdgeInsets.zero,
                 onPressed: () {
@@ -52,7 +52,7 @@ class PlaceTile extends StatelessWidget {
                 },
               ),
               FlatButton(
-                child: Text('Ligar'),
+                child: const Text('Ligar'),
                 textColor: Colors.blue,
                 padding: EdgeInsets.zero,
                 onPressed: () {

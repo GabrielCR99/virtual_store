@@ -47,7 +47,7 @@ class DiscountCard extends StatelessWidget {
                     CartModel.of(context).setCoupon(null, 0);
 
                     Scaffold.of(context).showSnackBar(SnackBar(
-                      content: Text('Cupom inválido!'),
+                      content: const Text('Cupom inválido!'),
                       backgroundColor: Colors.red,
                     ));
                   }

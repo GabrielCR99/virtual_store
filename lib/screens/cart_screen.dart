@@ -14,7 +14,7 @@ class CartScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Meu carrinho'),
+        title: const Text('Meu carrinho'),
         actions: <Widget>[
           Container(
             alignment: Alignment.center,
@@ -51,9 +51,7 @@ class CartScreen extends StatelessWidget {
                     size: 80.0,
                     color: Theme.of(context).primaryColor,
                   ),
-                  SizedBox(
-                    height: 16.0,
-                  ),
+                  const SizedBox(height: 16.0),
                   Text(
                     'Faça o login para adicionar produtos!',
                     style: TextStyle(
@@ -62,9 +60,7 @@ class CartScreen extends StatelessWidget {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(
-                    height: 16.0,
-                  ),
+                  const SizedBox(height: 16.0),
                   RaisedButton(
                     color: Theme.of(context).primaryColor,
                     textColor: Colors.white,
